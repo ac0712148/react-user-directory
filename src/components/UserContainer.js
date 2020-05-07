@@ -1,21 +1,24 @@
 import React, { Component } from "react";
-import Header from "./Header"
-import Container from "./Container"
-import Row from "./Row"
-import Col from "./Col"
+import Header from "./Header";
+import Container from "./Container";
+import Row from "./Row";
+import Col from "./Col";
+import Table from "./Table";
 
 
 class UserContainer extends Component {
     render() {
         return (
-            <Header>
+            <div>
+                <Header />
                 <Container>
                     <Row>
-                        <Col>   
+                        <Col> 
+                            <Table /> 
                         </Col>
                     </Row>
                 </Container>
-            </Header>
+            </div>
         )
     }
 }
