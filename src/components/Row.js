@@ -2,7 +2,7 @@ import React from "react";
 
 function Row(props) {
     return (
-        <div className={`row`}>
+        <div className={`w3-row`}>
             {props.children}
         </div>
     )
