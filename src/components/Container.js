@@ -2,7 +2,7 @@ import React from "react";
 
 function Container(props) {
     return (
-        <div className={`container`}>
+        <div className={`w3-container`}>
             {props.children}
         </div>
     )
