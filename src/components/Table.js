@@ -27,6 +27,7 @@ function Table() {
                         </tbody>
                     </table>
                 </div>
+                <div className="w3-padding-32"></div>
             </div>
         </div>
         
