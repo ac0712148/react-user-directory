@@ -3,7 +3,7 @@ import RowData from "./RowData";
 
 function Table() {
     const users = [];
-    for(let i = 0; i < 10; i++) {
+    for(let i = 0; i < 40; i++) {
         users.push(<RowData key={i}/>)
     }
     return (
