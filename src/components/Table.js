@@ -1,17 +1,18 @@
 import React from "react";
-import RowData from "./RowData";
+import RowData from "../components/RowData"
 
-function Table() {
-    const users = [];
-    for(let i = 0; i < 40; i++) {
-        users.push(<RowData key={i}/>)
+function Table(props) {
+    // console.log(props.users);
+    let users = props.users;
+    // console.log(users)
+    const rows = [];
+    for(let i = 0; i < users.length; i++) {
+        rows.push(<RowData key={i} userData={users[i]}/>)
     }
-    return (
+    
+    return(
         <div>
-            <hr />
             <div className = "w3-center">
-                <h2> Search Bar Goes Here! </h2>
-                <p className = "w3-large" > Search by Name, Username, Email, or Phone to find user.</p>
                 <div className = "w3-responsive w3-card-4">
                     <table className = "w3-table w3-bordered w3-centered">
                         <thead>
@@ -23,15 +24,48 @@ function Table() {
                             </tr>
                         </thead>
                         <tbody>
-                            {users}
+                            {rows}
                         </tbody>
                     </table>
                 </div>
-                <div className="w3-padding-32"></div>
             </div>
         </div>
-        
     )
 }
+
+// function Table() {
+//     const users = [];
+//     for(let i = 0; i < 5; i++) {
+//         users.push(<RowData key={i}/>)
+//     }
+
+//     console.log("Final: " + finalinput);
+//     return (
+//         <div>
+//             <hr />
+//             <div className = "w3-center">
+//                 <SearchForm userData={data} />
+//                 <div className="w3-padding-small"></div>
+//                 <div className = "w3-responsive w3-card-4">
+//                     <table className = "w3-table w3-bordered w3-centered">
+//                         <thead>
+//                             <tr className = "w3-black">
+//                                 <th > Name </th>
+//                                 <th > User </th>
+//                                 <th > Email </th>
+//                                 <th > Phone </th>
+//                             </tr>
+//                         </thead>
+//                         <tbody>
+//                             {users}
+//                         </tbody>
+//                     </table>
+//                 </div>
+//                 <div className="w3-padding-32"></div>
+//             </div>
+//         </div>
+        
+//     )
+// }
 
 export default Table
