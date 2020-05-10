@@ -8,7 +8,7 @@ class UserContainer extends Component {
     state = {
         users: [],
         search: "",
-        filteredUsers: [],
+        filteredUsers: [""],
     };
 
     componentDidMount(){
@@ -17,23 +17,39 @@ class UserContainer extends Component {
     loadUsers = () => {
         API.getUser()
         .then((res) => {
-            this.setState({users: res.data.results})
+            this.setState({
+                users: res.data.results
+            })
         })
     }
     handleInputChange = (event) => {
-        console.log(event.target.value)
         this.setState({
-            search: event.target.value
+            search: event.target.value,
+            filteredUsers: []
         })
+        this.filterUsers();
+        
     }
+    filterUsers() {
+        this.state.filteredUsers = [];
+        for(let i = 0; i < this.state.users.length; i++){
+            if(this.state.users[i].name.first.toLowerCase().search(this.state.search.toLowerCase()) !== -1
+            || this.state.users[i].name.last.toLowerCase().search(this.state.search.toLowerCase()) !== -1){
+                this.state.filteredUsers.push(this.state.users[i])
+                this.setState({filteredUsers: this.state.filteredUsers})
+            }
+        }
+        console.log(".......")
+    }
+    
     render() {
         return (
             <div>
                 <Header />
                 <br />
-                <SearchForm search={this.state.search} handleInputChange={this.handleInputChange} />
+                <SearchForm search={this.state.search} handleInputChange={this.handleInputChange} filteredUsers={this.filterUsers}/>
                 <hr />
-                <Table users={this.state.users}/>
+                <Table users={this.state.users} search={this.state.search} filteredUsers={this.state.filteredUsers} />
             </div>
         )
     }
