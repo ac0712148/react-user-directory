@@ -2,12 +2,21 @@ import React from "react";
 import RowData from "../components/RowData"
 
 function Table(props) {
-    // console.log(props.users);
-    let users = props.users;
-    // console.log(users)
+    console.log(props)
+    const users = props.users;
+    const filteredUsers = props.filteredUsers;
+    let search = props.search;
     const rows = [];
-    for(let i = 0; i < users.length; i++) {
-        rows.push(<RowData key={i} userData={users[i]}/>)
+
+    if(search === ""){
+        for(let i = 0; i < users.length; i++) {
+            rows.push(<RowData key={i} userData={users[i]}/>)
+        }
+    }
+    else{
+        for(let i = 0; i < filteredUsers.length; i++) {
+            rows.push(<RowData key={i} userData={filteredUsers[i]}/>)
+        }
     }
     
     return(
@@ -17,10 +26,10 @@ function Table(props) {
                     <table className = "w3-table w3-bordered w3-centered">
                         <thead>
                             <tr className = "w3-black">
-                                <th > Name </th>
-                                <th > User </th>
-                                <th > Email </th>
-                                <th > Phone </th>
+                                <th > Name <span onClick={() => {}}>{'🔼'}</span><span onClick={() => {}}>{'🔼'}</span></th>
+                                <th > User <span onClick={() => {}}>{'🔼'}</span><span onClick={() => {}}>{'🔼'}</span></th>
+                                <th > Email <span onClick={() => {}}>{'🔼'}</span><span onClick={() => {}}>{'🔼'}</span></th>
+                                <th > Phone <span onClick={() => {}}>{'🔼'}</span><span onClick={() => {}}>{'🔼'}</span></th>
                             </tr>
                         </thead>
                         <tbody>
