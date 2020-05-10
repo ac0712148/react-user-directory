@@ -8,6 +8,10 @@ function Table(props) {
     let search = props.search;
     const rows = [];
 
+    sortName() {
+        
+    }
+
     if(search === ""){
         for(let i = 0; i < users.length; i++) {
             rows.push(<RowData key={i} userData={users[i]}/>)
