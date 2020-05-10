@@ -8,9 +8,9 @@ function Table(props) {
     let search = props.search;
     const rows = [];
 
-    sortName() {
-        
-    }
+    // sortName() {
+
+    // }
 
     if(search === ""){
         for(let i = 0; i < users.length; i++) {
