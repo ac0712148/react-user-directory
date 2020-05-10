@@ -1,71 +1,73 @@
-# react-user-directory
+# React User Directory
 User Directory built with React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub top language](https://img.shields.io/github/languages/top/ac0712148/react-user-directory)
+![github-repo-size](https://img.shields.io/github/repo-size/ac0712148/react-user-directory)
+![github-last-commit](https://img.shields.io/github/last-commit/ac0712148/react-user-directory)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Links
+App: https://ac0712148.github.io/react-user-directory/
+Repo: https://github.com/ac0712148/react-user-directory
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Table of Contents
+  * [Description](#description)
+  * [Technology Specs](#technology-specs)
+  * [Installation and Dependencies](#installation-and-dependencies)
+  * [Purpose](#purpose)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+  For this project we design and build a directory for users with React. The application renders a table populated with random users from https://randomuser.me/. One feature in this application is that the user can search the first name of a user in the table and dynamically render the table with matching the matching search.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology Specs
 
-### `npm run build`
+  This application is created using `create-react-app` which is used for `React` applications. We implement various components to render different parts of the application but use the `userDirectory` component to manage the logic behind the functionality. Our data is generated from an api request using `axios` to fetch the response.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  ## File Structure
+```
+.
+|
+├── package.json
+│
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+|
+├── src
+│   ├── components
+|   |   ├── Header.js
+|   |   ├── RowData.js
+|   |   ├── SearchForm.js
+|   |   ├── Table.js
+|   |   └── UserContainer.js
+|   |    
+|   ├── utils
+|   |   └── API.js
+|   |
+|   ├── App.js
+|   └── index.js
+|
+└── .gitgignore
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Installation and Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ To install and this project in you local host, clone this repo to a folder you wish to keep the project. Make sure you have this projects' `package.json` in your directory. If this requirement is met, then simply run the following command to install dependencies:
+```
+npm install
+```
+ Then, once the dependencies are installed, run the following command to run the React application.
+```
+npm start
+```
 
-### `npm run eject`
+## Purpose
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ The purpose of this project is to demonstrate the use of React to create components and manage states. We use these technologies to demonstrate components rendering instead of rendering entire pages for a single change in the application.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
