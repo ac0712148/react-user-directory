@@ -1,32 +1,35 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, {useMemo, useState, useEffect} from "react";
 import axios from "axios";
 import Header from "./Header.js"
 import Table from "./Table";
 
 function App() {
     const [data,
-        setData
-    ] = useState([]);
+        setData] = useState([]);
 
-    const columns = useMemo(() => [{
-        Header: "User Directory",
-        columns: [{
-            Header: "👉Name",
-            accessor: "fullname"
-        }, {
-            Header: "👉Login",
-            accessor: "login.username"
-        }, {
-            Header: "👉Gender",
-            accessor: "gender"
-        }, {
-            Header: "👉Email",
-            accessor: "email"
-        }, {
-            Header: "👉Phone",
-            accessor: "phone"
-        }]
-    }], []);
+    const columns = useMemo(() => [
+        {
+            Header: "User Directory",
+            columns: [
+                {
+                    Header: "👉Name",
+                    accessor: "fullname"
+                }, {
+                    Header: "👉Login",
+                    accessor: "login.username"
+                }, {
+                    Header: "👉Gender",
+                    accessor: "gender"
+                }, {
+                    Header: "👉Email",
+                    accessor: "email"
+                }, {
+                    Header: "👉Phone",
+                    accessor: "phone"
+                }
+            ]
+        }
+    ], []);
 
     // Using useEffect to call the API once mounted and set the data
     useEffect(() => {
@@ -40,17 +43,12 @@ function App() {
         })();
     }, []);
 
-    return ( <
-        div className = "App" >
-        <
-        Header / >
-        <
-        hr / >
-        <
-        Table columns = { columns }
-        data = { data }
-        /> <
-        /div>
+    return (
+        <div className="App">
+            <Header/>
+            <hr/>
+            <Table columns={columns} data={data}/>
+        </div>
     );
 }
 
